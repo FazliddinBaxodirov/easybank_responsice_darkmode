@@ -1,0 +1,68 @@
+.site-header {
+    padding: 18px 0;
+    background: var(--header-bg);
+    position: relative;
+    z-index: 99999;
+}
+
+.header-top {
+    @include display;
+}
+.header-top_logo-link {
+    display: inline-block;
+}
+
+.navbar__list {
+    @include display ($jc:center);
+}
+.navbar__item + .navbar__item {
+    margin-left: 30px;
+}
+.navbar__link {
+    @include linkStyle ;
+    padding-bottom: 28px;
+    transition: all 0.1s;
+    &:hover{
+        border-bottom: 3px solid rgb(82, 193, 157);
+    }
+}
+.header-top__btn-wrapper {
+    @include display ($al:center, $jc:space-between);
+    gap: 10px;
+}
+.header-top__request-btn {
+    @include buttonStyle ($w:163px);
+}
+.header-top__hamburger-btn {
+    display: none;
+    border: none;
+    background: transparent;
+}
+.header-top__mode-btn {
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: var(--btn-bg);
+    border: none;
+    color: var(--moon-color);
+    @include display ($al:center, $jc:center);
+    cursor: pointer;
+
+    &:hover{
+        opacity: 0.4;
+    }
+}
+
+
+@media (max-width:763px){
+    .navbar , .header-top__request-btn{
+        display: none;
+    }
+
+    .header-top__hamburger-btn{
+        display: block;
+        border: none;
+        background: transparent;
+    }
+}
